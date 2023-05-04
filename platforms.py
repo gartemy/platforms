@@ -16,13 +16,28 @@ man_jump = pygame.image.load('man_jump.png')
 man_stand = pygame.image.load('man_stand.png')
 platform = pygame.image.load('кирпич шоколадка small.png')
 
-map = []
-
-for i in range(18):
-    stroka = ''
-    for j in range(31):
-        stroka += str(randint(0, 1))
-    map.append(stroka)
+map = [
+    '******************************',
+    '*                            *',
+    '*                            *',
+    '*                            *',
+    '*                            *',
+    '*                            *',
+    '*                            *',
+    '*                            *',
+    '*                            *',
+    '*                            *',
+    '*                            *',
+    '*                            *',
+    '*            **              *',
+    '*                            *',
+    '*                            *',
+    '*                            *',
+    '*          ******        *****',
+    '*****                        *',
+    '*                            *',
+    '******************************'
+]
 
 while True:
     window.fill(pygame.Color('pink'))
@@ -35,7 +50,7 @@ while True:
 
     for i in range(len(map)):
         for j in range(len(map[i])):
-            if map[i][j] == '1':
+            if map[i][j] == '*':
                 platform_rect = platform.get_rect()
                 platform_rect.x = platform_rect.width * j
                 platform_rect.y = platform_rect.height * i
